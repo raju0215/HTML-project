@@ -1,18 +1,25 @@
+// Optional: simple dynamic post example
+console.log("Blog website loaded!");
 
-// Simple fade-in effect for each story section
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.story').forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100) {
-            section.style.opacity = 1;
-            section.style.transform = 'translateY(0)';
-        }
-    });
-});
+// তুমি চাইলে JS দিয়ে নতুন পোস্ট dynamically যোগ করতে পারো:
+const posts = [
+    {
+        title: "তৃতীয় পোস্ট",
+        date: "22 ফেব্রুয়ারি, 2026",
+        content: "এটি তৃতীয় পোস্ট। এখানে আরও নতুন তথ্য শেয়ার করা হবে।"
+    }
+];
 
-// Initial CSS for JS effect
-document.querySelectorAll('.story').forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = 'translateY(50px)';
-    section.style.transition = 'all 1s ease';
+const blogContainer = document.getElementById("blog-posts");
+
+posts.forEach(post => {
+    const article = document.createElement("article");
+    article.classList.add("post");
+    article.innerHTML = `
+        <h2>${post.title}</h2>
+        <p class="date">${post.date}</p>
+        <p>${post.content}</p>
+        <a href="#" class="read-more">Read More</a>
+    `;
+    blogContainer.appendChild(article);
 });
