@@ -1,43 +1,116 @@
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff0f5;
-    color: #333;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Header */
 header {
     text-align: center;
-    background-color: #ffb6c1;
-    padding: 40px 20px;
+    background-color: #4b79a1;
     color: #fff;
+    padding: 40px 20px;
 }
 
 header h1 {
-    margin: 0;
     font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-.story {
+header p {
+    font-size: 1.2em;
+}
+
+/* Navigation */
+nav {
+    background-color: #243b55;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 0;
+    display: block;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffb347;
+}
+
+/* Blog Posts */
+main {
+    max-width: 900px;
     margin: 40px auto;
-    padding: 20px;
-    width: 80%;
-    background-color: #ffe4e1;
-    border-radius: 15px;
+    padding: 0 20px;
+}
+
+.post {
+    background-color: #f7f7f7;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.story h2 {
-    color: #d148a3;
+.post h2 {
+    color: #4b79a1;
+    margin-bottom: 10px;
 }
 
+.post .date {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.post p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #243b55;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    color: #ffb347;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #ffb6c1;
+    background-color: #4b79a1;
     color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
 }
